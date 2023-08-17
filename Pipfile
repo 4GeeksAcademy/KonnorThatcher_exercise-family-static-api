@@ -19,4 +19,4 @@ python_version = "3.10"
 
 [scripts]
 start="python src/app.py"
-test="pytest --testdox --color=yes"
+test="pytest --testdox --color=yes --tb=line"
