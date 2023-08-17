@@ -35,7 +35,7 @@ def handle_hello():
 
     return jsonify(members), 200
 
-@app.route('/members/<int:id>', methods=['GET'])
+@app.route('/member/<int:id>', methods=['GET'])
 def get_member(id):
     member = jackson_family.get_member(id)
     if member:
@@ -43,13 +43,13 @@ def get_member(id):
     else:
         return jsonify(message="Member not found"), 400
 
-@app.route('/members', methods=['POST'])
+@app.route('/member', methods=['POST'])
 def add_member():
     body = request.get_json()
     jackson_family.add_member(body)
-    return '', 200
+    return jsonify({}), 200
 
-@app.route('/members/<int:id>', methods=['DELETE'])
+@app.route('/member/<int:id>', methods=['DELETE'])
 def delete_member(id):
     delete = jackson_family.delete_member(id)
     if delete:

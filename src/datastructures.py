@@ -43,13 +43,6 @@ class FamilyStructure:
 
     def add_member(self, member):
         # fill this method and update the return
-        '''
-        member: {
-            name: "{INSERT NAME HERE}"
-            age: Int
-            lucky_numbers: []
-        }
-        '''
         member_id = member.get('id', self._generateId())
         member["id"] = member_id
         member["last_name"] = self.last_name
